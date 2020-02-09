@@ -1,0 +1,689 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == only-desktop {
+    @media only screen and (min-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == only-phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } //1800
+  }
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12, 12/16
+  }
+}
+//mobile view
+.main__section {
+  display: none;
+  @include respond(phone) {
+    display: block;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(var(--cdc, 255, 255, 255), 1);
+
+    border-bottom: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+    // border-bottom: 1px solid rgb(207, 101, 87);
+    height: 77px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+
+    transition: height 0.2s ease-in-out;
+  }
+}
+.main__container {
+  display: none;
+  @include respond(phone) {
+    display: block;
+    -webkit-box-align: center;
+
+    align-items: center;
+
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+
+    flex-direction: row;
+    height: 77px;
+    -webkit-box-pack: center;
+
+    -ms-flex-pack: center;
+    justify-content: center;
+    max-width: 1010px;
+    padding: 26px 20px;
+
+    transition: height 0.2s ease-in-out;
+    width: 100%;
+  }
+}
+.main__left {
+  display: none;
+  @include respond(phone) {
+    display: flex;
+
+    -webkit-box-flex: 1;
+    font-weight: 600;
+    font-size: 5em;
+    font-family: "Tangerine", cursive;
+    flex: 1 9999 0%;
+    min-width: 40px;
+    display: flex;
+  }
+}
+
+.main__img {
+  display: none;
+  @include respond(phone) {
+    display: block;
+    height: 30px;
+    width: 30px;
+  }
+}
+.main__bar {
+  display: none;
+  @include respond(phone) {
+    display: block;
+    transform: scaleX(0.5);
+    transform-origin: left;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: rgba(var(--i1d, 38, 38, 38), 1);
+
+    height: 30px;
+    //margin: 0 4px;
+    transition: opacity 0.1s ease-out;
+    width: 1px;
+  }
+}
+.clearbutton__item {
+  display: block;
+  background-color: transparent;
+
+  border: none;
+  cursor: pointer;
+
+  outline: none;
+}
+.clearbutton__logout {
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
+  border: none;
+  @include respond(phone) {
+    position: relative;
+    display: block;
+    left: 40%;
+  }
+  @include respond(only-desktop) {
+    display: none;
+  }
+}
+.main__logout {
+  @include respond(phone) {
+    font-size: 5vw;
+
+    letter-spacing: 2px;
+    font-weight: 400;
+    position: fixed;
+    bottom: 0;
+    color: black;
+    background: white;
+    width: 100%;
+    right: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+}
+
+//Desktop and Mobile view
+.projectcontainer {
+  @include respond(only-desktop) {
+    margin-left: 25vw;
+    grid-column: 2 / span 12;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(auto, 2vw));
+    grid-gap: 4vw;
+
+    &__card {
+      //3
+      grid-column-end: span 4;
+      display: flex;
+      flex-direction: column;
+      border: none;
+      &__content {
+        font-size: 1vw;
+        font-weight: 600;
+      }
+    }
+  }
+  &__box {
+    width: 22vw;
+    height: 30vh;
+  }
+  &__img {
+    object-fit: cover;
+    //border-radius: 4%;
+
+    @include respond(only-desktop) {
+      display: block;
+      object-fit: fill;
+      width: 100%;
+      height: 30vh;
+      // opacity: 0.7;
+      // transition: 0.5s ease;
+      // backface-visibility: hidden;
+      margin-bottom: 30px;
+      // &:hover {
+      //   opacity: 1;
+      // }
+    }
+
+    @include respond(phone) {
+      border-radius: 0%;
+      height: 123px;
+      width: 32vw;
+      text-align: center;
+    }
+  }
+  &:nth-child(even) {
+    @include respond(phone) {
+      position: unset;
+      display: grid;
+      grid-template-columns: 33vw auto auto;
+      padding: 0px;
+      margin-left: 1vw;
+    }
+  }
+  @include respond(phone) {
+    position: unset;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 0px;
+    margin-top: 310px;
+  }
+
+  &__projectname {
+    font-size: 1vw;
+    font-weight: 600;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+    @include respond(phone) {
+      margin-top: 0vw;
+      font-size: 4vw;
+    }
+  }
+}
+
+.mid__info {
+  display: none;
+  @include respond(phone) {
+    position: relative;
+    display: block;
+    margin-top: 100px;
+    height: 40vw;
+  }
+}
+.mid__name {
+  position: absolute;
+
+  top: 10px;
+  left: 30%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 28px;
+  line-height: 32px;
+  margin: -5px 0 -6px;
+  font-weight: 300;
+}
+.mid__profilepic {
+  height: 50px;
+  width: 50px;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+.mid__description {
+  font-size: 5vw;
+  margin-top: 6vw;
+  margin-left: 20px;
+  word-wrap: break-word;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+.mid__counter {
+  display: none;
+  @include respond(phone) {
+    display: block;
+    position: absolute;
+    font-size: 3vw;
+
+    left: 30%;
+  }
+}
+.hrbar {
+  display: none;
+  @include respond(phone) {
+    display: block;
+  }
+}
+//END OF MOBILE VIEW
+
+.edge {
+  position: fixed;
+  width: 25vw;
+  height: 100%;
+  padding: 10px 45px 10px;
+
+  @include respond(only-phone) {
+    display: block;
+    padding: 0px;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(var(--cdc, 255, 255, 255), 1);
+
+    border-bottom: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+    // border-bottom: 1px solid rgb(207, 101, 87);
+    height: 77px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    transition: height 0.2s ease-in-out;
+  }
+  &__mobilesection {
+    @include respond(only-desktop) {
+      display: none;
+    }
+    @include respond(only-phone) {
+      display: block;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 10px;
+      height: 10vh;
+
+      width: 100%;
+      background-color: rgba(242, 245, 248, 0.589);
+    }
+  }
+  &__verticalmenu {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    height: 100%;
+    text-align: left;
+    background-color: white;
+    @include respond(only-phone) {
+      position: fixed;
+      display: block;
+      z-index: 1;
+      margin-bottom: 10px;
+      height: 210px;
+
+      width: 100%;
+    }
+
+    &__input {
+      @include respond(only-phone) {
+        display: none;
+      }
+    }
+
+    &__mycontainer {
+      position: relative;
+      @include respond(only-phone) {
+        position: relative;
+        display: block;
+        margin-top: 10px;
+        height: 10vh;
+        width: fit-content;
+        margin-top: 4vh;
+        left: 1%;
+      }
+      margin-bottom: 0vh;
+    }
+    &__photoinput > input {
+      display: none;
+    }
+    &__photolabel {
+      @include respond(only-phone) {
+        z-index: 1;
+        position: absolute;
+        top: 7vh;
+        left: 80%;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+      }
+    }
+    &__plus {
+      position: absolute;
+      top: 12vh;
+      left: 4vw;
+      height: 8vh;
+      width: 10vw;
+      @include respond(only-phone) {
+        top: -10px;
+        left: 0%;
+      }
+    }
+
+    &__mypicture {
+      padding: 0px;
+      height: 20vh;
+      width: 10vw;
+      border-radius: 20px;
+      object-fit: cover;
+      @include respond(only-phone) {
+        border-radius: 50px 20px;
+        height: 15vh;
+        width: 30vw;
+        margin-left: 10px;
+        margin-top: 0px;
+      }
+    }
+
+    &__logo {
+      @include respond(only-phone) {
+        display: none;
+      }
+      width: fit-content;
+      font-size: 4vw;
+      margin-bottom: 2vh;
+      font-family: "Tangerine", cursive;
+      font-weight: 600;
+    }
+
+    &__username {
+      @include respond(only-phone) {
+        position: relative;
+        top: -10vh;
+        margin-bottom: 0px;
+        left: 40vw;
+        font-weight: 600;
+        font-size: 3vw;
+      }
+      font-size: 2vw;
+      margin-bottom: 0vh;
+
+      font-size: 1.5vw;
+      font-family: Arial, Helvetica, sans-serif;
+
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    &__menu {
+      @include respond(only-phone) {
+        display: none;
+      }
+      font-size: 1.5vw;
+      font-family: Arial, Helvetica, sans-serif;
+      padding-bottom: 4vh;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    &__button {
+      @include respond(only-phone) {
+        display: none;
+      }
+      background-color: transparent;
+
+      border: none;
+      cursor: pointer;
+
+      outline: none;
+      padding: 0px;
+      font-size: 1.5vw;
+      font-family: Arial, Helvetica, sans-serif;
+
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    &__editprofile {
+      @include respond(only-phone) {
+        display: none;
+      }
+      background-color: transparent;
+
+      cursor: pointer;
+
+      outline: none;
+      padding: 0px;
+
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      @include respond(only-desktop) {
+        font-size: 1.2em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+    &__logout {
+      @include respond(only-phone) {
+        display: none;
+      }
+      font-size: 1.5vw;
+      font-family: Arial, Helvetica, sans-serif;
+
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    &__description {
+      @include respond(only-phone) {
+        display: block;
+        position: relative;
+
+        top: -35px;
+      }
+    }
+  }
+}
+.descriptioninput {
+  @include respond(only-phone) {
+    border: 1px solid rgb(49, 49, 49);
+    margin-left: 0px;
+    width: 80%;
+    margin-left: 10vw;
+    margin-top: 20px;
+    height: 30px;
+  }
+}
+.enter {
+  @include respond(only-desktop) {
+    padding-top: 1px;
+    margin: 0px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  @include respond(only-phone) {
+    border: none;
+    cursor: pointer;
+
+    outline: none;
+    margin-bottom: 1px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+}
+.biocontainer {
+  @include respond(only-phone) {
+    position: relative;
+    left: 40vw;
+    top: -4vh;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    line-height: 2em; /* a */
+    max-height: 3em; /* a x number of line to show (ex : 2 line)  */
+  }
+}
+.bio {
+  @include respond(only-phone) {
+    font-size: 3vw;
+    width: 50vw;
+    text-align: left;
+  }
+  @include respond(only-desktop) {
+    font-size: 0.8vw;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    line-height: 2em; /* a */
+    width: 15vw;
+    max-height: 15vh; /* a x number of line to show (ex : 2 line)  */
+  }
+}
+.setdescription {
+  @include respond(only-desktop) {
+    position: relative;
+    background-color: transparent;
+    padding-bottom: 2px;
+    padding-right: 4px;
+    padding-left: 6px;
+    padding-top: 0px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    top: -1px;
+
+    margin-left: 10px;
+  }
+  @include respond(only-phone) {
+    position: relative;
+    left: 41%;
+    margin-top: 5px;
+    background-color: transparent;
+
+    border: none;
+    cursor: pointer;
+
+    outline: none;
+    padding-bottom: -0px;
+    width: fit-content;
+  }
+}
+//No projects
+
+.projects {
+  @include respond(only-desktop) {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    text-transform: uppercase;
+  }
+}
+
+.editprofile__section {
+  position: relative;
+  @include respond(only-desktop) {
+    left: -1px;
+  }
+  @include respond(only-phone) {
+    top: 60px;
+  }
+}
+.brmobile {
+  @include respond(only-desktop) {
+    display: none;
+  }
+  @include respond(only-phone) {
+    display: block;
+  }
+}
+
+.editprofile {
+  @include respond(only-desktop) {
+    font-family: Arial, Helvetica;
+    font-weight: 600;
+    margin-left: 0px;
+    border: 1px solid #ccc;
+    margin-bottom: 0;
+  }
+  @include respond(only-phone) {
+    font-weight: 600;
+    font-family: Arial, Helvetica;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+
+.inputsection {
+  @include respond(only-phone) {
+  }
+}
+
+.plus {
+  height: 100px;
+  padding-left: 6vw;
+  padding-top: 4vh;
+  @include respond(only-phone) {
+    height: 10vh;
+    padding-left: 10vw;
+  }
+}

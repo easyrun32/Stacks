@@ -1,0 +1,15 @@
+.bodycreate {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: table;
+  &__box {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &__form {
+    display: table; /* shrinks to fit conntent */
+    margin: auto;
+  }
+}

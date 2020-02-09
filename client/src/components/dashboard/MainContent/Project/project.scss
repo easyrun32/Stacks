@@ -1,0 +1,427 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == only-desktop {
+    @media only screen and (min-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == only-phone {
+    @media only screen and (min-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == large-desktop {
+    @media only screen and (min-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } //1800
+  }
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12, 12/16
+  }
+}
+.header__nav__size {
+  width: 60vw;
+  text-align: center;
+}
+.header__nav .header__ul {
+  margin: auto;
+  padding: 0;
+  //left: %;
+  top: 10%;
+  list-style: none;
+  position: relative;
+}
+.header__nav ul li {
+  font-size: 1.3vw;
+  letter-spacing: 3px;
+
+  font-weight: 300;
+  display: inline-block;
+  //30
+  margin: 0 0.4vw;
+  border-bottom: 1px solid transparent;
+  // 20
+  padding: 0 20px 3px;
+
+  @include respond(big-desktop) {
+    font-size: 1.3vw;
+  }
+
+  @include respond(tab-land) {
+    font-size: 20px;
+    margin: 0 20px;
+    padding: 0 0px 3px;
+  }
+  @include respond(tab-port) {
+    font-size: 2vw;
+    margin: 0 1vw;
+    padding: 0 0px 3px;
+  }
+  @include respond(phone) {
+    display: none;
+  }
+  letter-spacing: 3px;
+
+  font-weight: 300;
+  display: inline-block;
+  //30
+  margin: 0 0.4vw;
+  border-bottom: 1px solid transparent;
+  // 20
+  padding: 0 20px 3px;
+}
+.header__comments {
+  border-bottom: solid 1px black;
+}
+.header__button {
+  padding: 0;
+  display: block;
+  background-color: transparent;
+
+  border: none;
+  cursor: pointer;
+
+  outline: none;
+  border-bottom: solid 1px black;
+}
+.header__detail {
+  font-size: 1.2vw;
+  text-decoration: none;
+  /* display: flex; */
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "GT Pressura", Arial, sans-serif;
+  font-weight: 300;
+
+  @include respond(big-desktop) {
+    font-size: 30px;
+    left: 83%;
+    top: 1px;
+  }
+
+  @include respond(tab-land) {
+    font-size: 15px;
+    left: 80%;
+  }
+  @include respond(tab-port) {
+    font-size: 1.5vw;
+  }
+  @include respond(phone) {
+    display: none;
+  }
+}
+.CountupLikes {
+  font-weight: 300;
+  border-bottom: solid 1px black;
+}
+.numberpop {
+  //font-size: 1.5em;
+}
+.projecttext {
+  padding: 0px;
+  color: black;
+  background-color: white;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.imageUpload {
+  & > input {
+    display: none;
+  }
+  &__img {
+    width: 80px;
+    cursor: pointer;
+  }
+}
+
+.headerlog {
+  font-size: 1.3vw;
+  text-decoration: none;
+  position: absolute;
+  left: 85%;
+  padding: 23px;
+  top: 1vw;
+  display: block;
+  -webkit-transition: padding 0.3s;
+  transition: padding 0.3s;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "GT Pressura", Arial, sans-serif;
+
+  font-weight: 300;
+
+  @include respond(big-desktop) {
+    font-size: 30px;
+    left: 83%;
+    top: 1px;
+  }
+
+  @include respond(tab-land) {
+    font-size: 15px;
+    left: 80%;
+  }
+  @include respond(tab-port) {
+    font-size: 1.5vw;
+  }
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.projectitle {
+  font-size: 3vw;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 3vw;
+  @include respond(phone) {
+    font-size: 9vw;
+    height: 100px;
+    margin-bottom: 0vw;
+  }
+  &__child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    //width: 110px;
+    height: 30px;
+    text-align: center;
+    margin: -35px 0 0 -55px;
+    &__text {
+      font-family: Arial;
+      font-size: 2vw;
+      margin-bottom: 0;
+      @include respond(phone) {
+        font-size: 4vw;
+      }
+    }
+    &__fancytext {
+      @include respond(phone) {
+        font-size: 4vw;
+      }
+      margin-right: 10px;
+      font-weight: 600;
+      font-size: 3vw;
+      //font-family: "Tangerine", cursive;
+    }
+  }
+}
+.mains {
+  display: grid;
+  grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
+  grid-gap: 40px;
+  padding: 60px, 0;
+  @include respond(phone) {
+    grid-gap: 0px;
+  }
+  &__cards {
+    grid-column: 2 / span 12;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(auto, 60px));
+    grid-gap: 40px;
+
+    @include respond(phone) {
+      display: block;
+    }
+    @include respond(tab-port) {
+      display: block;
+    }
+    @include respond(big-desktop) {
+      grid-column: 2 / span 25;
+      display: grid;
+      grid-template-columns: repeat(12, minmax(auto, 120px));
+      grid-gap: 20px;
+    }
+  }
+  &__card {
+    grid-column-end: span 4;
+    display: flex;
+    flex-direction: column;
+    // background-color: blue;
+    border: none;
+
+    transition: all 0.3s ease 0s;
+    @include respond(phone) {
+      margin-bottom: 40px;
+    }
+    @include respond(tab-port) {
+      margin-bottom: 40px;
+    }
+  }
+  &__cardupload {
+    margin: auto;
+    grid-column-end: span 4;
+    display: flex;
+    flex-direction: column;
+    // background-color: blue;
+    border: none;
+
+    transition: all 0.3s ease 0s;
+    @include respond(phone) {
+      margin-bottom: 40px;
+    }
+    @include respond(tab-port) {
+      margin-bottom: 40px;
+    }
+  }
+  &__imgbox {
+    //height: 300px;
+    // height: 300px;
+
+    height: 300px;
+    width: 100%;
+    //width: 400px;
+    @include respond(phone) {
+      height: 300px;
+    }
+  }
+  &__img {
+    //object-fit: cover;
+    // max-width: 300px;
+    // max-width: 100%;
+    height: 100%;
+    width: 100%;
+    display: block; /* remove extra space below image */
+  }
+}
+
+.delete {
+  font-size: 1.3vw;
+  font-weight: 600;
+}
+.effecthover {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+  background: -webkit-linear-gradient(45deg, #8995ff 0%, #05abe0 100%);
+  background: linear-gradient(45deg, #8995ff 0%, #05abe0 100%);
+  @include respond(phone) {
+    display: block;
+    border-radius: 0px;
+    margin-bottom: 10px;
+  }
+}
+
+.effecthover .hoveroverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  padding: 3em;
+  text-align: left;
+}
+
+.effecthover img {
+  display: block;
+  position: relative;
+  max-width: none;
+  width: calc(100% + 60px);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.45s;
+  transition: opacity 0.35s, transform 0.45s;
+  -webkit-transform: translate3d(-40px, 0, 0);
+  transform: translate3d(-40px, 0, 0);
+}
+
+.effecthover h2 {
+  text-transform: uppercase;
+  color: #fff;
+  position: relative;
+  font-size: 17px;
+  background-color: transparent;
+  padding: 15% 0 10px 0;
+  text-align: left;
+}
+
+.effecthover .hoveroverlay:before {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  border: 1px solid #fff;
+  content: "";
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.45s;
+  transition: opacity 0.35s, transform 0.45s;
+  -webkit-transform: translate3d(-20px, 0, 0);
+  transform: translate3d(-20px, 0, 0);
+}
+
+.effecthover a,
+.effecthover p {
+  color: white;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.45s;
+  transition: opacity 0.35s, transform 0.45s;
+  -webkit-transform: translate3d(-10px, 0, 0);
+  transform: translate3d(-10px, 0, 0);
+}
+
+.effecthover:hover img {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  // MOVE THE IMAGE
+  // to move change all 1's to 0's
+  -webkit-transform: translate3d(1, 0, 0);
+  transform: translate3d(1, 0, 0);
+}
+.effecthover:hover > div > div > p > a > img {
+  opacity: 2;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.effecthover:hover .hoveroverlay:before,
+.effecthover:hover a,
+.effecthover:hover p {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
