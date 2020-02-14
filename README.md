@@ -17,7 +17,7 @@ A website where you can adverstise your stack technologies
 Description
 ======
 My first mern project with a bunch of bloated component and no testing....
-100% sure they are bugs around so if anyone wanted to reduce the code to make it more 
+100% sure they are bugs around so if anyone wants to reduce the code to make it more 
 Readable 
 
 feel free to hit me up with a merge
