@@ -36,7 +36,7 @@ Go into config and add your mongo database
 ### 2 - google cloud storage 
 head over to  [www.google-cloud-storage.com](https://cloud.google.com/storage/?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-bkws-all-all-trial-e-dr-1008076&utm_content=text-ad-none-any-DEV_c-CRE_79747411567-ADGP_Hybrid+%7C+AW+SEM+%7C+BKWS+%7C+US+%7C+en+%7C+EXA+~+Google+Cloud+Storage-KWID_43700007031545851-kwd-11642151515&utm_term=KW_google%20cloud%20storage-ST_google+cloud+storage&gclid=CjwKCAiAp5nyBRABEiwApTwjXjPvLWvMS4jDauG57C8A7HqwDccgklajEmyDmg8K0mewf59jeBoLnhoC7zQQAvD_BwE)
 
-### enable Google Cloud Storage api  (FOR PICTURE UPLOADING)
+### 3 - enable Google Cloud Storage api  (FOR PICTURE UPLOADING)
 - create an api key 
 - go to the google folder inside the mern project where nodejs is located and place your key within
   there
