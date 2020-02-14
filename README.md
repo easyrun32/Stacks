@@ -1,3 +1,19 @@
+
+
+<p align="center">
+  <img width="460" height="300" src="https://i.ibb.co/DtGZBFY/stacks.png">
+</p>
+
+ <p align="center">
+  A website where you can adverstise your stack technologies
+ 
+</p>
+
+<p align="center">
+  <img width="460" height="300" src="https://i.ibb.co/6F2rnFq/Screen-Shot-2020-02-14-at-3-12-32-PM.png">
+</p>
+
+
 My first mern project with a bunch of bloated component and no testing....
 100% sure they are bugs around so if anyone wanted to reduce the code to make it more 
 Readable 
@@ -5,13 +21,6 @@ Readable
 feel free to hit me up with a merge
 
 Visit.https://mylogin32.herokuapp.com/
-
-<p align="center">
-  <img width="460" height="300" src="https://i.ibb.co/DtGZBFY/stacks.png">
-</p>
-
-
-
 
 ### SET UP 
 
