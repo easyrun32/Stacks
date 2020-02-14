@@ -1,12 +1,12 @@
 
-Stacks
-======
+
 
 <p align="center">
   <img width="460" height="300" src="https://i.ibb.co/DtGZBFY/stacks.png">
 </p>
-
- <p align="center">
+Stacks
+======
+ <p align="left">
   A website where you can adverstise your stack technologies
  
 </p>
