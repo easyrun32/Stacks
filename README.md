@@ -12,7 +12,7 @@ Stacks
 </p>
 
 <p align="center">
-  <img width="460" height="300" src="https://i.ibb.co/6F2rnFq/Screen-Shot-2020-02-14-at-3-12-32-PM.png">
+  <img width="100%" height="300" src="https://i.ibb.co/6F2rnFq/Screen-Shot-2020-02-14-at-3-12-32-PM.png">
 </p>
 
 
