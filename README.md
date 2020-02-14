@@ -14,14 +14,16 @@ A website where you can adverstise your stack technologies
   <img width="100%" height="300" src="https://i.ibb.co/6F2rnFq/Screen-Shot-2020-02-14-at-3-12-32-PM.png">
 </p>
 
-
+Description
+======
 My first mern project with a bunch of bloated component and no testing....
 100% sure they are bugs around so if anyone wanted to reduce the code to make it more 
 Readable 
 
 feel free to hit me up with a merge
 
-Visit.https://mylogin32.herokuapp.com/
+Otherwise Visit.
+[Stacks](https://mylogin32.herokuapp.com/)
 
 ### SET UP 
 
