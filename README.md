@@ -1,5 +1,5 @@
 
-Alt-Stacks
+Stacks
 ======
 
 <p align="center">
