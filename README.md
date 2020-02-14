@@ -61,7 +61,7 @@ head over to  [www.google-cloud-storage.com](https://cloud.google.com/storage/?u
     
     (THIS IS REALLY IMPORTANT FOR FILE UPLOADING)
     
-### finally deploy to heroku
+### 4 - finally deploy to heroku
 
 ### IF YOU'D LIKE TO KNOW HOW A MERN APPLICATION IS DEPLOYED
 
