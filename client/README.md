@@ -1,68 +1,64 @@
+-My first mern project with a bunch of bloated component and no testing....
+100% they are bugs around so if anyone wanted to reduce the code to make it more 
+Readable 
+
+-feel free to hit me up with a merge
+
+However i am proud of how it looks visit the site at 
+
+https://mylogin32.herokuapp.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+###  Before you begin 
 
-### `npm start`
+### 1 - MONGO
+Make sure you have mongo set up 
+https://www.mongodb.com/
+Go into config and add your mongo database
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 2 - google cloud storage 
+head over to  https://cloud.google.com/storage/?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-bkws-all-all-trial-e-dr-1008076&utm_content=text-ad-none-any-DEV_c-CRE_79747411567-ADGP_Hybrid+%7C+AW+SEM+%7C+BKWS+%7C+US+%7C+en+%7C+EXA+~+Google+Cloud+Storage-KWID_43700007031545851-kwd-11642151515&utm_term=KW_google%20cloud%20storage-ST_google+cloud+storage&gclid=CjwKCAiAp5nyBRABEiwApTwjXjPvLWvMS4jDauG57C8A7HqwDccgklajEmyDmg8K0mewf59jeBoLnhoC7zQQAvD_BwE
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### enable Google Cloud Storage api  (FOR PICTURE UPLOADING)
+- create an api key 
+- go to the google folder inside the mern project where nodejs is located and place your key within
+  there
 
-### `npm test`
+- you also need to put your heroku website in the domain 
+  otherwise google will give an error claiming it needs a website 
+  
+### IMPORTANT FOR GOOGLE CLOUD STORAGE MAKE SURE YOU SET UP ***Configuration and Config Vars**** with google cloud storage!
+    
+    HEROKU NEEDS TO FIND YOUR SECRET KEY FOR GOOGLE HEAD OVER TO 
+    https://devcenter.heroku.com/articles/config-vars for a little tutorial
+    
+    - go to personal 
+    - your app
+    - settings 
+    - scroll down to config vars 
+    - reveal Config Vars
+    - put in key this -> GOOGLE_APPLICATION_CREDENTIALS
+    - put in value this -> secret.json
+    
+    put in whatevever for heroku to find that secret.json 
+    
+    (THIS IS REALLY IMPORTANT FOR FILE UPLOADING)
+    
+### finally deploy to heroku
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### IF YOU'D LIKE TO KNOW HOW A MERN APPLICATION IS DEPLOYED
 
-### `npm run build`
+ - Go to nodejs package.json
+ - add this to your script
+ - "scripts": {
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+ - GO TO YOUR CLIENT -> package.json
+ - and add this before your dependencies
+  "proxy": "http://localhost:5000",
+ 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Thank you 
