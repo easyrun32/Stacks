@@ -6,9 +6,6 @@ feel free to hit me up with a merge
 
 Visit.https://mylogin32.herokuapp.com/
 
-
-![alt text](https://i.ibb.co/DtGZBFY/stacks.png)
-
 <p align="center">
   <img width="460" height="300" src="https://i.ibb.co/DtGZBFY/stacks.png">
 </p>
