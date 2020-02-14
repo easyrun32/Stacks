@@ -25,7 +25,7 @@ feel free to hit me up with a merge
 Otherwise Visit.
 [Stacks](https://mylogin32.herokuapp.com/)
 
-Installition 
+Installation
 ======
 
 ### 1 - MONGO
