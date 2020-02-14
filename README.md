@@ -1,17 +1,20 @@
--My first mern project with a bunch of bloated component and no testing....
-100% they are bugs around so if anyone wanted to reduce the code to make it more 
+My first mern project with a bunch of bloated component and no testing....
+100% sure they are bugs around so if anyone wanted to reduce the code to make it more 
 Readable 
 
--feel free to hit me up with a merge
+feel free to hit me up with a merge
 
-However i am proud of how it looks visit the site at 
-
-https://mylogin32.herokuapp.com/
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Visit.https://mylogin32.herokuapp.com/
 
 
-###  Before you begin 
+
+![alt text](https://ibb.co/2y8TzrS)
+
+
+
+
+
+### SET UP 
 
 ### 1 - MONGO
 Make sure you have mongo set up 
