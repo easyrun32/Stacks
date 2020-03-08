@@ -11,7 +11,7 @@ Stacks
 A website where you can adverstise your stack technologies
 
 <p align="center">
-  <img width="100%" height="300" src="https://i.ibb.co/ZccrSz8/frontpage.png">
+  <img width="100%" height="300" src="https://raw.githubusercontent.com/easyrun32/Stacks/master/frontpage.png">
 </p>
 
 Description
