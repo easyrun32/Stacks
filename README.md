@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img width="460" height="300" src="https://i.ibb.co/JxL8DW4/logo.png">
+  <img width="460" height="300" src="https://raw.githubusercontent.com/easyrun32/Stacks/master/logo.png">
 </p>
 
 
