@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img width="460" height="300" src="https://ibb.co/HNvR5Ls">
+  <img width="460" height="300" src="https://i.ibb.co/JxL8DW4/logo.png">
 </p>
 
 
@@ -11,7 +11,7 @@ Stacks
 A website where you can adverstise your stack technologies
 
 <p align="center">
-  <img width="100%" height="300" src="https://ibb.co/nQQyBMc">
+  <img width="100%" height="300" src="https://i.ibb.co/ZccrSz8/frontpage.png">
 </p>
 
 Description
